@@ -22,7 +22,7 @@ class FormSubmissionController extends Controller
             'form_id' => $form->id,
             'data' => json_encode($request->all())
         ]);
-        return redirect()->route('forms.show', $form->id);
+        return redirect()->route('forms.show', $form->id)->with('message', 'Form submitted');;
     }
 
     /**

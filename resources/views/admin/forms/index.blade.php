@@ -35,17 +35,4 @@
         </table>
     </div>
 </div>
-    {{-- <ul>
-        @foreach ($forms as $form)
-            <li>
-                <a href="{{ route('admin.forms.show', $form->id) }}">{{ $form->title }}</a>
-                <a href="{{ route('admin.forms.edit', $form->id) }}" class="btn btn-primary">Edit</a>
-                <form action="{{ route('admin.forms.destroy', $form->id) }}" method="POST" style="display:inline;">
-                    @csrf
-                    @method('DELETE')
-                    <button class="btn btn-danger" type="submit">Delete</button>
-                </form>
-            </li>
-        @endforeach
-    </ul> --}}
 @endsection

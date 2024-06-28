@@ -25,6 +25,9 @@
     
     <div class="container">
         <div class="row">
+            @if (session('message'))
+                <p class="alert alert-info">{{session('message')}}</p>
+            @endif
             <h1>{{ $form->title }}</h1>
             <form action="{{ route('forms.store') }}" method="POST">
                 @csrf
