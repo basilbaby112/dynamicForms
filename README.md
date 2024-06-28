@@ -29,7 +29,7 @@ Open the .env file and configure your database and other settings. For example:
 Run Database Migrations:
     php artisan migrate
 
-Run Database seeder
+Run Database seeder:
     php artisan db:seed
 
 Serve the Application:
