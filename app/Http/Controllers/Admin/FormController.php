@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Models\Form;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Jobs\FormCreatedMailSendJob;
 
 class FormController extends Controller
 {
@@ -31,7 +32,8 @@ class FormController extends Controller
     public function store(Request $request)
     {
         $form = Form::create($request->all());
-        // dispatch(new \App\Jobs\SendFormCreatedNotification($form));
+        
+        FormCreatedMailSendJob::dispatch($form);
         return redirect()->route('admin.forms.index');
     }
 
